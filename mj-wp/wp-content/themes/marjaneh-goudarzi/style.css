@@ -1,0 +1,626 @@
+/*
+  Theme Name: Mj-theme
+  Author: Shayan Javadi
+  Description: Artist wp theme
+*/
+
+/*color #ff003d*/
+/*color #1abc9c*/
+/*color #d02424*/
+body{
+	color:#404040;
+	/*margin: 40px auto;*/
+	border:
+	height: ;auto;
+	border:#f0f0f0 solid 1px;
+	overflow: auto;
+	/*max-width: 1140px;*/
+	background-color: #e3e2e2;
+	background-image: url('css/symphony.png');
+
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+	color: #404040;
+}
+
+p {
+	width: 84%;
+	margin: 0 auto;
+	line-height: 200%;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: .5px;
+	margin-bottom: 20px;
+}
+
+
+img {
+	margin-top: 10px;
+}
+
+section {
+	margin-top: 40px;
+}
+
+section:after {
+	display: block;
+	height: 1px;
+	background-color: #8f9090;
+	content: " ";
+	width: 90%;;
+	margin: 0 auto;
+	margin-top: 90px;
+}
+
+.front-page-main section:last-of-type:after {
+	display: none;
+	height: 1px;
+	background-color: #8f9090;
+	content: " ";
+	width: 57%;;
+	margin: 120px auto;
+}
+
+section:last-of-type {
+	padding-bottom: 40px;
+}
+
+.nav-top li a{
+	color:#322f2f;
+	-webkit-transition:color 0.3s, background 0.2s;
+	transition: color 0.3s, background 0.2s;
+}
+
+.nav-top li a:hover{
+	color: #ff003d;
+}
+
+.nav-top li{
+	-webkit-transform: scale(1);
+	        transform: scale(1);
+	-webkit-transition:-webkit-transform .2s ease-in-out;
+	transition:-webkit-transform .2s ease-in-out;
+	transition:transform .2s ease-in-out;
+	transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.nav-top li:hover{
+	-webkit-transform: scale(1.3);
+	        transform: scale(1.3);
+}
+
+.current-page{
+	color: #ff003d !important;
+}
+
+.button{
+	color:#5a5a5a;
+}
+
+.top-bar{
+	font-size:13px;
+	color:#666;
+}
+
+.top-bar .social .fa{
+	color:#666;
+	background: #f9fbf8;
+	padding:9px;
+	width:35px;
+	text-align: center;
+}
+
+.top-bar form {
+    background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+    float: left;
+    margin: 0 0 0 50px;
+    width: 240px;
+}
+
+.top-bar form input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #7f7d7d;
+    float: left;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    padding: 10px;
+    text-align: right;
+    text-transform: capitalize;
+    width: auto;
+    margin:0;
+    margin-top:5px;
+    margin-left:10px;
+}
+
+.top-bar form button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #888888;
+    float: left;
+    font-size: 13px;
+    height: 100%;
+    line-height: 35px;
+    padding: 0;
+    width: 30px;
+}
+
+.top-bar span{
+	display:block;
+	padding-top:10px;
+}
+
+
+
+
+
+
+.menu{
+	margin-top:10px;
+	float:right;
+}
+
+.post{
+	float:left;
+	width:100%;
+	background:#f6f6f6;
+}
+
+.post-desc{
+	float:left;
+	padding:90px 90px 30px;
+	width:50%;
+}
+
+.post-desc > span {
+    float: left;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.post-desc h3 {
+    color: #444444;
+    float: left;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.post-img{
+	float:left;
+	width:50%;
+}
+
+.read-btn {
+    float: left;
+    padding: 14px 40px;
+    background: #5a5a5a;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 50px;
+}
+
+.main-footer{
+	display: inline-block;
+  background-color:#f1f1f1 !important;
+  color:#373535;
+  padding: 50px 0;
+  overflow:auto;
+	margin: 0 auto;
+	background-image: url("css/symphony.png");
+	width: 100%;
+	vertical-align: middle;
+
+}
+
+.main-footer .fa{
+	display: inline-block;
+	margin: 0 auto;
+  color:#373535;
+  margin-right:10px;
+	margin-bottom: 15px;
+	font-size: 5vh;
+	vertical-align: -0.2em
+}
+
+.main-footer p{
+	vertical-align: middle;
+
+	margin: 0 auto;
+  line-height: 27px;
+  width: 55%;
+}
+
+.main-footer h3 {
+    padding-bottom:5px;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+.main-footer ul{
+  margin:0;
+  padding:0;
+}
+
+.main-footer li{
+  list-style: none;
+  line-height: 2.2em;
+  border-bottom:#666 solid 1px;
+}
+
+.title-section{
+  background:#000;
+  color: #cac9c9;
+  padding:80px 0;
+  text-align: center;
+  margin-bottom:30px;
+}
+
+.title-section h1{
+  color:#fff;
+  margin:15px 0 20px 0;
+}
+
+.title-section p.welcome-text{
+  max-width:150px;
+  margin:auto;
+  border-right:4px #cac9c9 solid;
+  border-left:4px #cac9c9 solid;
+}
+
+.title-section p.sub-text{
+  max-width:700px;
+  margin:auto;
+  font-style: italic;
+  line-height:2.3em;
+}
+
+.single-page, .gallery{
+	margin-bottom:40px;
+	overflow:auto;
+}
+
+.gallery img{
+	width: 100%;
+	height: auto;
+	margin-bottom:40px;
+
+	position: relative;
+	overflow: hidden;
+	max-height: 200px;
+}
+
+.well{
+  padding:20px;
+  background:#fff;
+  margin-bottom:20px;
+}
+
+.sidebar-widget{
+  margin-bottom:20px;
+}
+
+.sidebar-widget h3{
+  font-size:22px;
+  border-bottom:5px #ccc double;
+  margin-bottom:20px;
+  padding-bottom:10px;
+}
+
+.sidebar-widget ul{
+  margin:0;
+  padding:0;
+}
+
+.sidebar-widget li{
+  list-style: none;
+  line-height: 2.4em;
+  border-bottom:1px #ccc dashed;
+}
+
+.blog-post{
+    margin-bottom:40px;
+    text-align: center;
+}
+
+.blog-post img{
+  margin:auto;
+}
+
+.meta{
+  width: 100%;
+  text-align: center;
+  margin:20px 0 20px 0;
+  padding-bottom:10px;
+  border-bottom: 2px dashed #ccc;
+}
+
+.meta ul {
+  margin: 2px auto;
+  line-height: 1.4;
+  padding-left: 0;
+}
+
+.meta li {
+    display: inline;
+    text-align: center;
+    padding-right:20px;
+}
+
+.meta .fa{
+  margin-right:5px;
+}
+
+
+/*-----------NAVIGATION------------*/
+header {
+	padding-top: 30px;
+
+}
+
+
+
+.nav-top li {
+	display: inline-block;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 600;
+	font-size: 130%;
+}
+
+.nav-top li::after {
+	padding-right: 30px;
+	content: '';
+}
+
+.nav-top:after {
+    display: block;
+    height: 1px;
+    background-color: #13474e;
+    content: " ";
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.nav-top li:last-child:after {
+	padding-right: 0;
+}
+
+h1,
+h3 {
+	color: #181818;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 400;
+	-webkit-transition:color 0.2s;
+	transition: color 0.2s;
+}
+
+h2 {
+	color: #2e2e2e;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 400;
+	-webkit-transition:color 0.2s;
+	transition: color 0.2s;
+}
+
+h4 {
+  color: #2e2e2e;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 400;
+	-webkit-transition:color 0.2s;
+	transition: color 0.2s;
+}
+
+.row {
+	padding-top: 40px;
+}
+
+h1 {
+	font-size: 400%;
+}
+
+h1:hover {
+	color: #ff003d;
+}
+
+/*-----------CAROUSEL------------*/
+.image-carousel img {
+	width: 75%;
+}
+
+
+.main {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1300px;
+	background-color: #fff
+}
+
+.main section:first-of-type {
+	padding-top: 40px;
+
+}
+
+/*-----------SOCIAL MEDIA ICONS------------*/
+
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus,
+.fa-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+.fa-twitter:hover {
+    color: #00aced;
+}
+
+.fa-google-plus:hover {
+    color: #dd4b39;
+}
+
+.fa-instagram:hover {
+    color: #517fa4;
+}
+
+/**/
+
+.single-title {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+
+
+
+/*fadeins*/
+
+
+.js-lesson-2,
+.js-lesson-3
+{
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadein{
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.fadein2-3{
+    -webkit-animation: fadein 2.3s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */
+            animation: fadein 2.3s;
+}
+.fadein2-6{
+    -webkit-animation: fadein 2.6s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */
+            animation: fadein 2.6s;
+}
+.fadein3{
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */
+            animation: fadein 3s;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+
+/* Opera < 12.1 */
+
+
+/*front-page*/
+.front-page-small-img img {
+  width: 100%;
+  min-height: 349px;
+  max-width: 455px;
+}
+
+.front-page-title h4 {
+  color: #1f1e1e;
+  opacity: .8;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 150%;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: -3px;
+  -webkit-transition:color 0.3s, opacity 0.3s;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.front-page-title h4:hover {
+  opacity: 1;
+  color: #242424
+}
+
+
+.front-page-date {
+  font-size: 80%;
+  color: #8c8c8c
+}
+
+.front-page-box {
+  position: relative;
+  -webkit-transform: scale(.95);
+          transform: scale(.95);
+  -webkit-transition:border .2s, -webkit-transform .2s ease-in-out;
+  transition:border .2s, -webkit-transform .2s ease-in-out;
+  transition:transform .2s ease-in-out, border .2s;
+  transition: transform .2s ease-in-out, border .2s, -webkit-transform .2s ease-in-out;
+  border: #fff 1px solid;
+  border-radius: 2px;
+  /*border: #d9d9d9 1px solid;*/
+  padding-left: 25px;
+  padding-top: 50px;
+}
+
+.front-page-box:hover {
+  border: #d9d9d9 1px solid;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.front-page-row {
+  overflow: hidden;
+  padding: 0;
+}
+.row .front-page-box:first-of-type {
+  padding-left: 25px;
+}
+
+.front-page-small-img {
+  overflow: hidden;
+}
+
+/*blog*/
+
+.index-blog-thumbnail {
+	-webkit-transform: scale(.95);
+	        transform: scale(.95);
+	opacity: .92;
+	-webkit-transition:opacity 0.2s, -webkit-transform 0.3s;
+	transition:opacity 0.2s, -webkit-transform 0.3s;
+	transition:transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s, -webkit-transform 0.3s;
+}
+
+.index-blog-thumbnail:hover {
+	opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.single-post-div img {
+	opacity: .80;
+}
+
+.single-post-div .attachment-post-thumbnail {
+	width: 72%;
+}
