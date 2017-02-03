@@ -1,17 +1,19 @@
 <?php get_header(); ?>
-<?php
-function get_first_paragraph(){
-   global $post;
+      <?php
+      function get_first_paragraph(){
+         global $post;
 
-   $str = wpautop( get_the_content() );
-   $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
-   $str = strip_tags($str, '<a><strong><em>');
-   return '<p>' . $str . '</p>';
-   }
- ?>
+         $str = wpautop( get_the_content() );
+         $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
+         $str = strip_tags($str, '<a><strong><em>');
+         return '<p>' . $str . ' [...] </p>';
+         }
+       ?>
+       <?php $featured_query = new WP_Query(array(
+         'category_name' => 'blog' )); ?>
         <?php $i = 0; ?>
-        <?php while(have_posts()) :
-          the_post(); ?>
+        <?php while($featured_query->have_posts()) :
+          $featured_query->the_post(); ?>
           <div class="main">
           <?php $i++; ?>
           <?php
@@ -22,13 +24,12 @@ function get_first_paragraph(){
            <a href="<?php the_permalink(); ?>">
              <section>
                  <div class="row fadein">
-                   <h2 class="text-center">&mdash; <?php the_title(); ?> &mdash;</h2>
+                   <h2 class="text-center index-blog-title">&mdash; <?php the_title(); ?> &mdash;</h2>
                    <p class=" text-center front-page-date"><?php the_date(); ?></p>
                  </div>
                  <div class="index-blog-thumbnail fadein">
                    <div class="row fadein">
                      <div class="large-6 columns">
-                       <h3 class="text-left">Some lesson</h3>
                        <?php echo get_first_paragraph(); ?>
                      </div>
                      <div class="large-6 columns">
@@ -42,7 +43,7 @@ function get_first_paragraph(){
           <a href="<?php the_permalink(); ?>">
             <section>
                 <div class="row fadein">
-                  <h2 class="text-center">&mdash; <?php the_title(); ?> &mdash;</h2>
+                  <h2 class="text-center index-blog-title">&mdash; <?php the_title(); ?> &mdash;</h2>
                   <p class=" text-center front-page-date"><?php the_date(); ?></p>
                 </div>
                 <div class="index-blog-thumbnail">
@@ -51,7 +52,6 @@ function get_first_paragraph(){
                       <?php the_post_thumbnail(); ?>
                     </div>
                     <div class="large-6 columns">
-                      <h3 class="text-left">Some lesson</h3>
                       <?php echo get_first_paragraph(); ?>
                     </div>
                   </div>
@@ -59,6 +59,7 @@ function get_first_paragraph(){
             </section>
           </a>
         	<?php endif; ?>
+          </div>
       <?php endwhile; ?>
     </div>
     <?php get_footer(); ?>

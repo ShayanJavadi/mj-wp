@@ -292,15 +292,7 @@ section:last-of-type {
 	overflow:auto;
 }
 
-.gallery img{
-	width: 100%;
-	height: auto;
-	margin-bottom:40px;
 
-	position: relative;
-	overflow: hidden;
-	max-height: 200px;
-}
 
 .well{
   padding:20px;
@@ -398,8 +390,7 @@ header {
 	padding-right: 0;
 }
 
-h1,
-h3 {
+h1 {
 	color: #181818;
 	font-family: 'Cormorant Garamond', serif;
 	font-weight: 400;
@@ -409,6 +400,14 @@ h3 {
 
 h2 {
 	color: #2e2e2e;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 400;
+	-webkit-transition:color 0.2s;
+	transition: color 0.2s;
+}
+
+h3 {
+	color: #181818;
 	font-family: 'Cormorant Garamond', serif;
 	font-weight: 400;
 	-webkit-transition:color 0.2s;
@@ -444,9 +443,11 @@ h1:hover {
 .main {
 	margin: 0 auto;
 	width: 100%;
+	border: rgba(173, 168, 168, 0.88) 0.1px solid;
 	max-width: 1300px;
 	background-color: #fff
 }
+
 
 .main section:first-of-type {
 	padding-top: 40px;
@@ -481,7 +482,8 @@ h1:hover {
 
 /**/
 
-.single-title {
+.single-title h3{
+	font-weight: bold;
 	margin-top: 50px;
 	margin-bottom: 30px;
 }
@@ -534,12 +536,35 @@ h1:hover {
 
 /* Opera < 12.1 */
 
+/*gallery*/
+.gallery img{
+	width: 100%;
+	height: auto;
+	margin-bottom:40px;
+
+	position: relative;
+	overflow: hidden;
+	max-height: 200px;
+}
+
+.gallery-small-img img {
+	opacity: .85;
+  width: 100%;
+  min-height: 310px;
+  max-width: 480px;
+	transition: opacity 0.3s;
+}
+
+.gallery-small-img img:hover {
+  opacity: 1;
+}
+
 
 /*front-page*/
 .front-page-small-img img {
   width: 100%;
-  min-height: 349px;
-  max-width: 455px;
+  min-height: 315px;
+  max-width: 480px;
 }
 
 .front-page-title h4 {
@@ -617,10 +642,31 @@ h1:hover {
           transform: scale(1);
 }
 
+.index-blog-title {
+	transition: color 0.3;
+}
+
+.index-blog-title:hover {
+	color: #ff003d;
+}
+
 .single-post-div img {
 	opacity: .80;
 }
 
 .single-post-div .attachment-post-thumbnail {
 	width: 72%;
+}
+
+
+
+/*appointy*/
+
+.onmouseoutChoose, .onmouseoverChoose {
+	background-color: #fff !important;
+}
+
+
+ul {
+	padding-left: 30px;
 }

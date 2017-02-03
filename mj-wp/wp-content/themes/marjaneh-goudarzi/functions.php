@@ -21,3 +21,19 @@
   add_action( 'after_setup_theme', 'theme_support');
 
   //add customizer functionality
+
+  /**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+  function calendar_widgets_init() {
+
+  	register_sidebar( array(
+  		'name'          => 'Booking calendar',
+  		'id'            => 'booking_calendar',
+  		'before_widget' => '<div>',
+  		'after_widget'  => '</div>',
+  	) );
+
+  }
+  add_action( 'widgets_init', 'calendar_widgets_init' );
