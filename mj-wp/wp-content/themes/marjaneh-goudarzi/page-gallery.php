@@ -1,7 +1,7 @@
 <?php get_header(); ?>
   <?php $featured_query = new WP_Query(array(
     'category_name' => 'gallery' )); ?>
-    <div class="main front-page-main">
+    <div class="main front-page-main gallery-main">
       <section class="gallery">
         <div class="text-center single-title">
           <h3>&mdash; Gallery &mdash;</h3>

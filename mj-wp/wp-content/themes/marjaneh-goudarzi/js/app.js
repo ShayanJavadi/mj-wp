@@ -1,5 +1,13 @@
 $(document).foundation()
 $(document).ready(function() {
+  $('.slide-show').slick({
+    autoplay: true,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    fade: true,
+    cssEase: 'linear'
+  });
 
 
   $('.js-lesson-2').waypoint(function(direction) {

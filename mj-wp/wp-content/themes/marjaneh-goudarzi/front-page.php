@@ -1,18 +1,40 @@
+<?php //<div class="text-center fadein3 carousel">
+  //<img src="<?php bloginfo('template_url'); /img/carimage-1.jpg" alt="">
+//</div> ?>
+
 <?php get_header(); ?>
   <?php $featured_query = new WP_Query(array(
     'category_name' => 'featured' )); ?>
     <div class="main front-page-main">
-      <section class="image-carousel">
-        <div class="row">
-          <div class="text-center fadein3">
-            <img src="<?php bloginfo('template_url'); ?>/img/carimage-1.jpg" alt="">
-          </div>
+      <section class="section-slide-show">
+          <div class="slide-show large-12 large-centered text-center fadein">
+            <div class="slide-1  fadein">
+              <img src="<?php bloginfo('template_url'); ?>/img/lessons1.jpg" alt="">
+                <a href="#">
+                  <h3 class="slide-caption-text">Sign up for classes</h3>
+                  <a href="#" class="slide-caption-link">Sign up now</a>
+                </a>
+            </div>
+            <div class="slide-2 ">
+              <img src="<?php bloginfo('template_url'); ?>/img/lessons2.jpg" alt="">
+              <a href="#">
+                <h3 class="slide-caption-text">Do this other thing now!</h3>
+                <a href="#" class="slide-caption-link">Learn more</a>
+              </a>
+            </div>
+            <div class="slide-3 ">
+              <img src="<?php bloginfo('template_url'); ?>/img/lessons3.jpg" alt="">
+              <a href="#">
+                <h3 class="slide-caption-text">Check out my work</h3>
+                <a href="#" class="slide-caption-link">View Gallery</a>
+              </a>
+            </div>
         </div>
       </section>
       <section>
         <div class="row">
           <div class="large-12 large-centered">
-            <h3 class="text-center">&mdash; Blog &mdash;</3>
+            <h2 class="text-center">&mdash; Recent Posts&mdash;<h2>
           </div>
         </div>
         <?php $i = 0; ?>
@@ -43,8 +65,9 @@
               </a>
             </div>
         	<?php endif; ?>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
       </section>
+
       <section>
         <div class="row">
           <div class="large-6 columns">
