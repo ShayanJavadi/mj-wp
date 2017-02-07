@@ -3,8 +3,7 @@
 //</div> ?>
 
 <?php get_header(); ?>
-  <?php $featured_query = new WP_Query(array(
-    'category_name' => 'featured' )); ?>
+
     <div class="main front-page-main">
       <section class="section-slide-show">
           <div class="slide-show large-12 large-centered text-center fadein">
@@ -32,13 +31,47 @@
         </div>
       </section>
       <section>
+        <?php $featured_query = new WP_Query(array(
+          'category_name' => 'gallery' )); ?>
         <div class="row">
           <div class="large-12 large-centered">
-            <h2 class="text-center">&mdash; Recent Posts&mdash;<h2>
+            <h2 class="text-center">&mdash; Recent Works &mdash;<h2>
           </div>
         </div>
         <?php $i = 0; ?>
-        <?php while($featured_query->have_posts() && $i < 4) :
+        <?php while($featured_query->have_posts() && $i < 2) :
+          $featured_query->the_post(); ?>
+          <?php $i++; ?>
+          <?php
+            //perform check so we can make a grid of new blog posts
+            if($i % 2 != 0) :
+           ?>
+            <div class="row front-page-row">
+              <a href="<?php the_permalink(); ?>" class="front-page-title">
+                <div class="large-6 columns front-page-box-gallery">
+                  <div class="text-left front-page-small-img"><?php the_post_thumbnail('home-small'); ?></div>
+                </div>
+              </a>
+        	<?php else : ?>
+            <a href="<?php the_permalink(); ?>" class="front-page-title">
+              <div class="large-6 columns front-page-box-gallery">
+                <span class="text-left front-page-small-img"><?php the_post_thumbnail('home-small'); ?></span>
+              </div>
+              </a>
+            </div>
+        	<?php endif; ?>
+        <?php endwhile;   wp_reset_postdata(); ?>
+      </section>
+      <section>
+        <?php $featured_query = new WP_Query(array(
+          'category_name' => 'featured' )); ?>
+        <div class="row">
+          <div class="large-12 large-centered">
+            <h2 class="text-center">&mdash; Recent Posts &mdash;<h2>
+          </div>
+        </div>
+        <?php $i = 0; ?>
+        <?php while($featured_query->have_posts() && $i < 2) :
           $featured_query->the_post(); ?>
           <?php $i++; ?>
           <?php

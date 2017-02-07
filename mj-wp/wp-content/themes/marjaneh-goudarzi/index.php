@@ -12,54 +12,49 @@
        <?php $featured_query = new WP_Query(array(
          'category_name' => 'blog' )); ?>
         <?php $i = 0; ?>
+        <section>
+
+          <div class="main">
         <?php while($featured_query->have_posts()) :
           $featured_query->the_post(); ?>
-          <div class="main">
           <?php $i++; ?>
           <?php
             //perform check so we can make a grid of new blog posts
             if($i % 2 != 0) :
            ?>
-
-           <a href="<?php the_permalink(); ?>">
-             <section>
+               <div class="index-blog-thumbnail fadein">
                  <div class="row fadein">
-                   <h2 class="text-center index-blog-title">&mdash; <?php the_title(); ?> &mdash;</h2>
-                   <p class=" text-center front-page-date"><?php the_date(); ?></p>
-                 </div>
-                 <div class="index-blog-thumbnail fadein">
-                   <div class="row fadein">
-                     <div class="large-6 columns">
-                       <?php echo get_first_paragraph(); ?>
-                     </div>
-                     <div class="large-6 columns">
-                       <?php the_post_thumbnail(); ?>
-                     </div>
+                   <a href="<?php the_permalink(); ?>">
+                   <div class="large-6 columns">
+                     <h2 class="text-left index-blog-title">&mdash; <?php the_title(); ?></h2>
+                     <p class=" text-left front-page-date"><?php the_date(); ?></p>
+                     <?php echo get_first_paragraph(); ?>
                    </div>
+                   <div class="large-6 columns index-blog-odd-img">
+                     <?php the_post_thumbnail(); ?>
+                   </div>
+                 </a>
                  </div>
-             </section>
-           </a>
+               </div>
         	<?php else : ?>
-          <a href="<?php the_permalink(); ?>">
-            <section>
-                <div class="row fadein">
-                  <h2 class="text-center index-blog-title">&mdash; <?php the_title(); ?> &mdash;</h2>
-                  <p class=" text-center front-page-date"><?php the_date(); ?></p>
-                </div>
                 <div class="index-blog-thumbnail">
                   <div class="row fadein">
-                    <div class="large-6 columns">
+                    <a href="<?php the_permalink(); ?>">
+                    <div class="large-6 columns ">
                       <?php the_post_thumbnail(); ?>
                     </div>
                     <div class="large-6 columns">
+                      <h2 class="text-left index-blog-title">&mdash; <?php the_title(); ?></h2>
+                      <p class=" text-left front-page-date"><?php the_date(); ?></p>
                       <?php echo get_first_paragraph(); ?>
                     </div>
+                    </a>
                   </div>
               </div>
-            </section>
-          </a>
         	<?php endif; ?>
-          </div>
       <?php endwhile; ?>
+    </div>
+    </section>
+
     </div>
     <?php get_footer(); ?>

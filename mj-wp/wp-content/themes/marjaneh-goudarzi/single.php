@@ -4,9 +4,9 @@
       <?php while (have_posts()) : ?>
         <?php the_post(); ?>
         <?php if (get_the_category()[0]->slug === 'gallery') : ?>
-          <section>
+          <section class="section-single-post">
             <div class="row">
-              <h2 class="text-center">&mdash; <?php the_title(); ?> &mdash;</h2>
+              <h2 class="text-center"><?php the_title(); ?> </h2>
             </div>
             <div class="row fadein">
               <div class="large-6 columns fadein3">
@@ -22,7 +22,7 @@
         <?php else : ?>
           <section class="image-carousel">
             <div class="row fadein3">
-              <h2 class="text-center">&mdash; <?php the_title(); ?> &mdash;</h2>
+              <h2 class="text-center"><?php the_title(); ?> </h2>
               <p class="text-center front-page-date"><?php the_date(); ?></p>
               <div class="text-center single-post-div">
                 <?php the_post_thumbnail(); ?>
