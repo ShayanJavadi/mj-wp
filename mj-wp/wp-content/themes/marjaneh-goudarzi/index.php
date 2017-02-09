@@ -15,6 +15,10 @@
         <section>
 
           <div class="main">
+            <div class="text-center single-title">
+              <h2>&mdash; Blog &mdash;</h2>
+            </div>
+
         <?php while($featured_query->have_posts()) :
           $featured_query->the_post(); ?>
           <?php $i++; ?>

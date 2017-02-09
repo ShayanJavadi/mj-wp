@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/foundation.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/hover.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animate.css">
+
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick-theme.css">
 
@@ -18,29 +18,18 @@
   </head>
   <body>
     <header>
+
       <div class="row">
-        <div class="text-center">
-          <!-- make this dynamic bloginfo('name'); -->
-          <a href="<?php bloginfo('url') ?>"><h1>Marjaneh Goudarzi</h1></a>
+        <div class="large-4  columns header-title">
+          <a href="<?php bloginfo('url') ?>"><h1>MARJANEH</h1></a>
         </div>
-      </div>
-      <div class="row">
-        <div class="large-12 large-centered columns text-center">
+        <div class="large-8 large-text-right columns header-menu">
           <?php
           wp_nav_menu(array(
             'theme_location'  => 'primary',
             'menu_class'      => 'nav-top'
           ));
           ?>
-          <!-- <ul class="nav-top">
-            <li class="fadein"><a href="index.html" class="current-page">Home</a></li>
-            <li class="fadein"><a href="about.html">About</a></li>
-            <li class="fadein"><a href="gallery.html">Gallery</a></li>
-            <li class="fadein2-6"><a href="lessons.html">Lessons</a></li>
-            <li class="fadein2-6"><a href="blog.html">Parties</a></li>
-            <li class="fadein3"><a href="blog.html">Shop</a></li>
-            <li class="fadein3"><a href="blog.html">Blog</a></li>
-          </ul> -->
         </div>
       </div>
     </header>

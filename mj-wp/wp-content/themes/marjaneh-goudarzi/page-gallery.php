@@ -4,7 +4,7 @@
     <div class="main front-page-main gallery-main">
       <section class="gallery">
         <div class="text-center single-title">
-          <h3>&mdash; Gallery &mdash;</h3>
+          <h2>Gallery</h2>
         </div>
         <?php
           $i = 1;
@@ -18,9 +18,12 @@
           <?php else : ?>
             <div class=" fadein3">
           <?php endif; ?>
+            <a href="<?php the_permalink(); ?>">
                 <div class="large-4 gallery-small-img columns">
-                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                  <?php the_post_thumbnail(); ?>
                 </div>
+              </a>
+            </div>
         <?php $i++; ?>
       <?php endwhile; ?>
       </div>
