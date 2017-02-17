@@ -16,9 +16,9 @@
 </footer>
 <?php wp_footer(); ?>
 <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/vendor/foundation.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.waypoints.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/vendor/what-input.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/vendor/foundation.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/vendor/slick.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>
 

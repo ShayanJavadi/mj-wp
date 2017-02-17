@@ -18,18 +18,21 @@
   </head>
   <body>
     <header>
+      <nav>
+        <div class="row">
+          <div class="large-4  columns header-title">
+            <a href="<?php bloginfo('url') ?>"><h1>MARJANEH</h1></a>
+            <a class="mobile-nav-icon js--nav-icon"><i class="fa fa-bars"></i></a>
+          </div>
+          <div class="large-8 large-text-right columns header-menu">
 
-      <div class="row">
-        <div class="large-4  columns header-title">
-          <a href="<?php bloginfo('url') ?>"><h1>MARJANEH</h1></a>
+            <?php
+            wp_nav_menu(array(
+              'theme_location'  => 'primary',
+              'menu_class'      => 'nav-top js--main-nav'
+            ));
+            ?>
+          </div>
         </div>
-        <div class="large-8 large-text-right columns header-menu">
-          <?php
-          wp_nav_menu(array(
-            'theme_location'  => 'primary',
-            'menu_class'      => 'nav-top'
-          ));
-          ?>
-        </div>
-      </div>
+      </nav>
     </header>

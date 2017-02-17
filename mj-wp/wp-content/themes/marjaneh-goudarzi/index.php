@@ -16,7 +16,7 @@
 
           <div class="main">
             <div class="text-center single-title">
-              <h2>&mdash; Blog &mdash;</h2>
+              <h2> Blog </h2>
             </div>
 
         <?php while($featured_query->have_posts()) :
