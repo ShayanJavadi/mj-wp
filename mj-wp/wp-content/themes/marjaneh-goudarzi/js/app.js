@@ -9,6 +9,9 @@ $(document).ready(function() {
     cssEase: 'linear'
   });
 
+
+
+
   //sticky nav
   $('header').waypoint(function(direction) {
       if (direction == "down") {
@@ -19,7 +22,7 @@ $(document).ready(function() {
           $('nav').removeClass('fadein-fast');
       }
   }, {
-    offset: '-145px;'
+    offset: '-205px;'
   });
 
 
@@ -37,17 +40,22 @@ $(document).ready(function() {
 
   $('.js--nav-icon').click(function() {
       var nav = $('.js--main-nav');
+      var slider = $('.js--slider');
       var icon = $('.js--nav-icon i');
 
       nav.slideToggle(200);
 
       if ( icon.hasClass('fa-bars')) {
+          slider.addClass('hide');
           icon.addClass(' fa-times');
           icon.removeClass(' fa-bars');
       } else {
+          slider.removeClass('hide');
           icon.addClass(' fa-bars');
           icon.removeClass(' fa-times');
       }
   });
+
+
 
 });

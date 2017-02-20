@@ -2,10 +2,17 @@
   <?php $featured_query = new WP_Query(array(
     'category_name' => 'gallery' )); ?>
     <div class="main front-page-main gallery-main">
+      <section class="section-slide-show">
+          <div class="slide-show large-12 large-centered  fadein">
+            <div class="slide-gallery fadein">
+              <div class="slide-caption slide-caption-pages">
+                <h3 class="slide-caption-text ">Gallery</h3>
+              </div>
+            </div>
+          </div>
+      </section>
       <section class="gallery">
-        <div class="text-center single-title">
-          <h2>Gallery</h2>
-        </div>
+
         <?php
           $i = 1;
         ?>
@@ -19,7 +26,7 @@
             <div class=" fadein3">
           <?php endif; ?>
             <a href="<?php the_permalink(); ?>">
-                <div class="large-4 gallery-small-img columns">
+                <div class="gallery-small-img columns">
                   <?php the_post_thumbnail(); ?>
                 </div>
               </a>

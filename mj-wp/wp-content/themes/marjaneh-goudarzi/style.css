@@ -23,6 +23,10 @@ body{
 
 }
 
+.hide {
+  display: none !important;
+}
+
 nav {
   background-color: rgba(255, 255, 255, 0.98);
   z-index: 99999;
@@ -85,6 +89,7 @@ section:after {
 section:last-of-type {
 	padding-bottom: 40px;
 }
+
 
 
 .sticky h1 {
@@ -157,16 +162,15 @@ section:last-of-type {
   color:#373535;
   margin-right:10px;
 	margin-bottom: 15px;
-	font-size: 5vh;
+	font-size: 4vh;
 	vertical-align: -0.2em
 }
 
 .main-footer p{
 	vertical-align: middle;
-
+width: 100%;
 	margin: 0 auto;
   line-height: 27px;
-  width: 55%;
 }
 
 
@@ -198,7 +202,6 @@ section:last-of-type {
 /*-----------NAVIGATION------------*/
 
 header {
-  height: 130px;
   box-shadow: inset 0px -0.5px 2px rgba(0, 0, 0, 0.16);
 }
 header .row {
@@ -207,14 +210,13 @@ header .row {
 }
 
 header h1 {
-  padding-top: 20px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 
 }
 
 .nav-top {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 25px;
   margin: 0;
 }
 
@@ -299,10 +301,48 @@ h1:hover {
 	color: #ff003d;
 }
 
+
+.large-centered h2 {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
 /*-----------CAROUSEL------------*/
 
 .image-carousel img {
 	width: 100%;
+}
+
+.slide-1 {
+  background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
+}
+.slide-2 {
+  background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide2.jpg);
+}
+.slide-3 {
+  background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide3.jpg);
+}
+
+.slide-gallery{
+  background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-gallery.jpg);
+}
+
+.slide-lessons {
+  background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-lessons.jpg);
+}
+
+
+.slide-gallery,
+.slide-lessons  {
+  display: inline-block;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+-webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/foodbackground-min.jpg);
+	width: 100%;
+  height: 280px;
+  border-radius: 3px;
 }
 
 .slide-1,
@@ -312,8 +352,10 @@ h1:hover {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  height: 100%;
+-webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/foodbackground-min.jpg);
 	width: 100%;
-  height: 510px;
+  height: 550px;
   border-radius: 3px;
 }
 
@@ -328,7 +370,7 @@ h1:hover {
 .slide-caption-link {
 	color: #fff;
 	padding: 3% 2.5%;
-	border: #fff 1px solid;
+	border: #fff 2px solid;
 	letter-spacing: 1.5px;
 	font-size: 120%;
   -webkit-transition: background-color 0.2s, color 0.2s;
@@ -341,12 +383,25 @@ h1:hover {
   text-align: left;
   font-family: 'Roboto';
   font-weight: 300;
-  font-size: 280%;
+  font-size: 300%;
   /*right: 53.3%;*/
   /*bottom: 45%;*/
 	color: #ffffff;
 	border-radius: 3px;
 	letter-spacing: 3px;
+}
+
+.slide-caption-pages {
+  margin: 0 auto;
+  right: 40%;
+  bottom: 30%;
+  text-align:center;
+
+}
+
+.slide-caption-pages h3 {
+
+
 }
 
 .slide-caption-link:hover,
@@ -366,8 +421,8 @@ h1:hover {
 }
 
 .slick-slider img{
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  opacity: .9;
+  width: 100%;
+  opacity: .8;
 	margin-top: 0;
 }
 
@@ -443,7 +498,7 @@ h1:hover {
   letter-spacing: 8px;
 }
 
-.single-title h2::after {
+/*.single-title h2::after {
   display: block;
 	height: 1px;
 	background-color: #777575;
@@ -453,7 +508,7 @@ h1:hover {
   z-index: 9999;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19);
 
-}
+}*/
 
 
 /*fadeins*/
@@ -515,7 +570,7 @@ h1:hover {
   border-radius: 2px;
   display: inline-block;
   width:394px;
-  max-height: 300px;
+  max-height: 450px;
   overflow:hidden;
   z-index: 999;
   border: 8px #fff solid;
@@ -530,8 +585,8 @@ h1:hover {
 }
 
 .gallery-small-img img {
-  width:420px;
-  min-height: 320px;
+  width: 100%;
+  min-height: 450px;
   border-radius: 3px;
   background: #fff;
 
@@ -544,10 +599,9 @@ h1:hover {
 
 
 /*front-page*/
-.front-page-small-img img {
-  min-height: 325px;
-  max-width: 470px;
-}
+
+
+
 
 .front-page-title h4 {
   color: #1f1e1e;
@@ -573,6 +627,8 @@ h1:hover {
   color: #8c8c8c
 }
 
+
+
 .front-page-box-classes {
   height: 400px;
 }
@@ -582,7 +638,8 @@ h1:hover {
 }
 
 .front-page-box {
-  padding: 30px 40px;
+  padding-top: 30px;
+  text-align: center;
   border-radius: 2px;
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
@@ -646,8 +703,10 @@ h1:hover {
 }
 
 .front-page-small-img img{
-  height: 350px;
-}
+  height: 100%;
+  max-height: 280px;
+  width: 80%}
+
 
 /*blog*/
 
@@ -805,7 +864,15 @@ textarea:focus {
 /*---------------------------------------------*/
 /*----------------MEDIA QUERIES----------------*/
 /*---------------------------------------------*/
+.front-page-double-links{
+  margin: 30% auto;
+  width: 90%;
+  text-align: center;
+}
+.section-mobile-header-picture {
+  display: none;
 
+}
 .mobile-nav-icon {
     float: right;
     margin-top: 18px;
@@ -818,9 +885,30 @@ textarea:focus {
 .mobile-nav-icon i {
     font-size: 200%;
 }
+@media only screen and (max-width: 1220px) {
 
-@media only screen and (max-width: 1112px) {
+  .gallery-small-img {
+    width:50%;
+    height: 25%;
+    margin: 0;
+  }
 
+  .gallery-small-img img{
+    height: 25%;
+  }
+
+  .slide-caption {
+    right: 45%;
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width: 1115px) {
+
+  .slide-caption {
+      right: 33%;
+      font-size: 80%;
+
+  }
 
   .large-4,
   .large-8 {
@@ -860,9 +948,9 @@ textarea:focus {
   }
 
   header h1 {
-    padding-top: 5px;
-
+    padding-top: 0px;
   }
+
   header {
     background-color: #fff;
     height: 70px;
@@ -901,4 +989,63 @@ textarea:focus {
   .sticky .mobile-nav-icon i { color: #555; }
 
 }
-/*@media only screen and (max-width: 500px)*/
+
+@media only screen and (max-width: 1024px) {
+ .front-page-row {
+   padding: 0 10%;
+ }
+}
+@media only screen and (max-width: 845px) {
+
+  .slide-caption {
+      right: 26%;
+      font-size: 80%;
+  }
+}
+@media only screen and (max-width: 750px ) {
+
+
+  .slide-caption-pages {
+    right: 15%;
+  }
+
+  .front-page-slide-show {
+    display: none;
+  }
+
+  .section-mobile-header-picture {
+    background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
+    height: 300px;
+    display: inline-block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+  -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/foodbackground-min.jpg);
+    width: 100%;
+    height: 280px;
+    border-radius: 3px;
+  }
+
+  .gallery-small-img {
+    width:90%;
+    height: 45%;
+    margin: 0 5%;
+  }
+}
+
+@media only screen and (max-width: 680px ) {
+  .slide-caption-pages {
+    left: 15%;
+    font-size: 60%;
+  }
+
+
+}
+@media only screen and (max-width: 530px ) {
+  .front-page-double-links{
+    margin: 40% auto;
+    width: 100%;
+
+  }
+}

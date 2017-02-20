@@ -1,9 +1,15 @@
 <?php get_header(); ?>
     <div class="main">
+      <section class="section-slide-show">
+          <div class="slide-show large-12 large-centered  fadein">
+            <div class="slide-lessons fadein">
+              <div class="slide-caption slide-caption-pages">
+                <h3 class="slide-caption-text ">Lessons &amp; Parties</h3>
+              </div>
+            </div>
+          </div>
+      </section>
       <section>
-        <div class="text-center single-title">
-          <h2> Lessons</h2>
-        </div>
         <div class="row">
           <div class="large-12 columns">
             <ul class="tabs " data-tabs id="tabs">
@@ -12,7 +18,7 @@
               <li class="tabs-title text-center"><a href="#panel3">Parties</a></li>
             </ul>
             <div class="tabs-content" data-tabs-content="tabs">
-              <div class="tabs-panel" id="panel1">
+              <div class="tabs-panel is-active" id="panel1">
                 <div class="row">
                   <div class="large-6 columns">
                     <h3 class="paragraph-title">Kids Classes</h3>
