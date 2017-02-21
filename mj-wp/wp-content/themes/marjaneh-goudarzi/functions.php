@@ -8,6 +8,7 @@
     register_nav_menus(array(
       'primary' => __('Primary Menu')
     ));
+    add_theme_support( 'woocommerce' );
   }
   function wpdocs_excerpt_more( $more ) {
     return ' [...] ';
@@ -20,6 +21,7 @@
   add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
   add_action( 'after_setup_theme', 'theme_support');
 
+  add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
   //add customizer functionality
 
   /**

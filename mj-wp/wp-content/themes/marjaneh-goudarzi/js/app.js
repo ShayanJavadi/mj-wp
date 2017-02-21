@@ -43,7 +43,7 @@ $(document).ready(function() {
       var slider = $('.js--slider');
       var icon = $('.js--nav-icon i');
 
-      nav.slideToggle(200);
+      nav.slideToggle(400);
 
       if ( icon.hasClass('fa-bars')) {
           slider.addClass('hide');

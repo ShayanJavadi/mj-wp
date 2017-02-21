@@ -24,7 +24,7 @@
             <a href="<?php bloginfo('url') ?>"><h1>MARJANEH</h1></a>
             <a class="mobile-nav-icon js--nav-icon"><i class="fa fa-bars"></i></a>
           </div>
-          <div class="large-8 large-text-left columns header-menu">
+          <div class="large-8 large-text-right columns header-menu">
 
             <?php
             wp_nav_menu(array(
