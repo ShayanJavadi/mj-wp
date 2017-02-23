@@ -24,7 +24,7 @@
             <a href="<?php bloginfo('url') ?>"><h1>MARJANEH</h1></a>
             <a class="mobile-nav-icon js--nav-icon"><i class="fa fa-bars"></i></a>
           </div>
-          <div class="large-8 large-text-left columns header-menu">
+          <div class="large-8 large-text-right columns header-menu">
 
             <?php
             wp_nav_menu(array(
@@ -36,3 +36,25 @@
         </div>
       </nav>
     </header>
+    <div class="">
+      <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+          $count = WC()->cart->cart_contents_count;
+          ?><a class="cart-contents absolute-cart-box" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+          if ( $count > 0 ) {
+              ?>
+              <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+              <?php
+          }
+
+          $subtotal = WC()->cart->subtotal;
+          ?><?php
+          if ( $subtotal > 0 ) {
+              ?>
+              <span class="cart-contents-subtotal"><?php echo esc_html( $subtotal ); ?></span>
+              <?php
+          }
+              ?></a>
+
+      <?php } ?>
+    </div>

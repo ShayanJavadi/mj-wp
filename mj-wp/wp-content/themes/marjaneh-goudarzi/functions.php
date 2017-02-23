@@ -24,6 +24,40 @@
   add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
   //add customizer functionality
 
+
+
+  /**
+ * Add Cart icon and count to header if WC is active
+ */
+ /**
+  * Ensure cart contents update when products are added to the cart via AJAX
+  */
+ function my_header_add_to_cart_fragment( $fragments ) {
+
+     ob_start();
+     $count = WC()->cart->cart_contents_count;
+     ?><a class="cart-contents absolute-cart-box fadein" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+     if ( $count > 0 ) {
+         ?>
+         <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+         <?php
+     }
+     $subtotal = WC()->cart->subtotal;
+     if ( $subtotal > 0 ) {
+         ?>
+         <span class="cart-contents-subtotal"><?php echo esc_html( $subtotal ); ?></span>
+         <?php
+     }
+         ?></a><?php
+
+     $fragments['a.absolute-cart-box'] = ob_get_clean();
+
+     return $fragments;
+ }
+ add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
+ //add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment_total' );
+
+
   /**
  * Register our sidebars and widgetized areas.
  *

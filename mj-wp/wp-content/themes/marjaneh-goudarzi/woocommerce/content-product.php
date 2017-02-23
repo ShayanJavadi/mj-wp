@@ -55,6 +55,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	woocommerce_template_loop_price();
 	woocommerce_template_loop_product_link_close();
 	woocommerce_template_loop_add_to_cart();
+	echo "<div class='loading-gif'></div>";
 	echo "</div>";
 	?>
 </div>

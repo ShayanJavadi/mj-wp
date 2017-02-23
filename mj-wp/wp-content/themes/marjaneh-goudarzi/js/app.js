@@ -1,5 +1,7 @@
 $(document).foundation();
 $(document).ready(function() {
+
+
   $('.slide-show').slick({
     autoplay: true,
     arrows: true,
@@ -9,7 +11,18 @@ $(document).ready(function() {
     cssEase: 'linear'
   });
 
-
+  $('header').waypoint(function(direction) {
+    //if cart is full and it is the right window size
+    if ($(window).width() < 845 && !($('.absolute-cart-box').is(':empty'))) {
+      if (direction == "down") {
+        $('.absolute-cart-box').hide();
+      } else {
+        $('.absolute-cart-box').show();
+      }
+    }
+  }, {
+    offset: '-40px;'
+  });
 
 
   //sticky nav
@@ -17,9 +30,17 @@ $(document).ready(function() {
       if (direction == "down") {
           $('nav').addClass('sticky');
           $('nav').addClass('fadein-fast');
+          //if cart is full and it is the right window size
+          if ($(window).width() < 845 && !($('.absolute-cart-box').is(':empty'))) {
+            $('.absolute-cart-box').show();
+          }
       } else {
           $('nav').removeClass('sticky');
           $('nav').removeClass('fadein-fast');
+          //if cart is full and it is the right window size
+          if ($(window).width() < 845 && !($('.absolute-cart-box').is(':empty'))) {
+            $('.absolute-cart-box').hide();
+          }
       }
   }, {
     offset: '-205px;'
@@ -43,7 +64,7 @@ $(document).ready(function() {
       var slider = $('.js--slider');
       var icon = $('.js--nav-icon i');
 
-      nav.slideToggle(400);
+      nav.slideToggle(200);
 
       if ( icon.hasClass('fa-bars')) {
           slider.addClass('hide');
@@ -55,7 +76,5 @@ $(document).ready(function() {
           icon.removeClass(' fa-times');
       }
   });
-
-
 
 });

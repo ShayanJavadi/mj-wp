@@ -114,6 +114,7 @@ section:last-of-type {
   color:#322f2f;
   -webkit-transition:color 0.3s, background 0.2s;
   -webkit-transition: color 0.3s, border-bottom 0.3s;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom 0.3s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom 0.3s ease-in-out;
 
 }
@@ -317,20 +318,25 @@ h1:hover {
 }
 
 .slide-1 {
+  background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
   background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
 }
 .slide-2 {
+  background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide2.jpg);
   background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide2.jpg);
 }
 .slide-3 {
+  background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide3.jpg);
   background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide3.jpg);
 }
 
 .slide-gallery{
+  background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-gallery.jpg);
   background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-gallery.jpg);
 }
 
 .slide-lessons {
+  background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-lessons.jpg);
   background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide-lessons.jpg);
 }
 
@@ -396,16 +402,12 @@ h1:hover {
 
 .slide-caption-pages {
   margin: 0 auto;
-  right: 40%;
+  right: 55%;
   bottom: 30%;
   text-align:center;
-
 }
 
-.slide-caption-pages h3 {
 
-
-}
 
 .slide-caption-link:hover,
 .slide-caption-link:active {
@@ -583,6 +585,7 @@ h1:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   -webkit-backface-visibility: hidden;
   -webkit-transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s, box-shadow 0.3s ;
   transition: opacity 0.3s, box-shadow 0.3s ;
 
 }
@@ -815,10 +818,9 @@ form span{
   color: #fff;
   border: 1px #ff002d solid;
   min-width: 90px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   border-radius: 2px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11);
-
 }
 
 .secondary-button:hover {
@@ -846,6 +848,7 @@ textarea:focus {
   text-transform: uppercase;
   color: #989595;
   border-bottom: 3px #fff solid;
+  -webkit-transition: color 0.1s ease-in-out, background 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
   transition: color 0.1s ease-in-out, background 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
 }
 
@@ -861,10 +864,150 @@ textarea:focus {
 }
 
 
-
 /*---------------------------------------------*/
 /*----------------SHOP----------------*/
 /*---------------------------------------------*/
+
+
+.cart-contents-subtotal:before {
+  content: '$'
+}
+
+.cart-contents-subtotal {
+  font-family: 'Roboto', sans-serif;
+  width: 50px;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 130%;
+  float: right;
+  padding-right: 10px;
+}
+
+
+.cart-contents:not(:empty) {
+  display:block;
+  z-index: 9999;
+}
+
+.cart-contents {
+  display: none;
+  z-index: -1;
+}
+
+.cart-contents:before {
+    font-family:FontAwesome;
+    content: "\f07a";
+    font-size:28px;
+    margin-top:10px;
+    font-style:normal;
+    font-weight:400;
+    padding-right:5px;
+    vertical-align: bottom;
+}
+.cart-contents:hover {
+    text-decoration: none;
+}
+.cart-contents-count {
+    color: #fff;
+    background-color: #ff003d;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 1px 6px;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: top;
+}
+
+.absolute-cart-box {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11);
+  border: 1px solid rgba(255,255,255,.05);
+  /*min-width: 220px;*/
+  border-radius: 90px;
+  font-size: 12px;
+  padding: 10px 15px;
+  position: fixed;
+  top: 25%;
+  right: 1%;
+  z-index: 15000;
+  opacity: .85;
+  background-color: #fff;
+  -webkit-transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cart-contents-count{
+  -webkit-transition: margin-right 0.3s ease-in-out;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.absolute-cart-box:hover{
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.31);
+  opacity: 1;
+}
+
+.absolute-cart-box:hover .cart-contents-count {
+  margin-right: 30px;
+}
+
+
+table p {
+  margin: 0;
+}
+
+.single-product-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.back-button {
+  margin-left: 15px;
+}
+
+.woocommerce-error {
+  list-style: none;
+  margin: 0;
+}
+
+.woocommerce-error li{
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+.single-content-description + ul {
+  width: 84%;
+	margin: 0 auto;
+  padding-left: 35px;
+	line-height: 200%;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: .5px;
+	margin-bottom: 20px;
+  font-size: 120%;
+  font-weight: 300;
+}
+
+button.single_add_to_cart_button.button.alt {
+    margin-left: 35px;
+}
+
+.products img {
+  height: 80%;
+}
+
+.products .front-page-box {
+  overflow: hidden;
+  height: 680px;
+}
+
+.shop-button {
+  background-color: #ff003d;
+  color: #fff;
+  border: 1px #ff002d solid;
+  min-width: 90px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11);
+  padding: 15px;
+}
+
 
 .product-info {
   padding-top: 15px;
@@ -877,10 +1020,37 @@ textarea:focus {
   padding-bottom: 10px;
 }
 
-.added_to_cart {
-  color: #ff002d;
-  padding-bottom: 5px;
+.single-product-add-button a{
+  margin-left: 40px;
 }
+
+.added_to_cart:hover {
+  color: #ff003d;
+}
+
+.loading.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+    max-height: 40px;
+}
+
+.loading {
+  padding: 9px 15px;
+}
+
+.loading span {
+   display: none;
+}
+
+.added span{
+  display: none;
+}
+
+
+.added:after {
+  content: 'Added!'
+}
+.loading:after {
+  content: url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/css/squares.gif);
+ }
 
 .button {
   background-color: #ff003d;
@@ -898,6 +1068,55 @@ textarea:focus {
   background-color: #da0437;
 }
 
+
+table {
+  table-layout: fixed;
+  border-collapse: separate;
+  overflow: hidden;
+}
+
+
+td {
+  padding: 0;
+  max-height: 20px;
+}
+
+.cart-times {
+    color: #fff;
+    background-color: #ff0032;
+    border-radius: 50%;
+    font-size: 130%;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 10px;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.cart-times:hover {
+  background-color: #da0437
+}
+
+
+tr:first-of-type {
+  border-top: 31px solid #ddd;
+}
+
+.product-thumbnail {
+  width: 130px;
+}
+
+.product-quantity {
+  text-align: center;
+  width: 110px;
+}
+
+.product-subtotal {
+  text-align: right;
+}
+.product-remove {
+  width: 50px
+}
 /*---------------------------------------------*/
 /*----------------MEDIA QUERIES----------------*/
 /*---------------------------------------------*/
@@ -1034,8 +1253,42 @@ textarea:focus {
  .front-page-row {
    padding: 0 10%;
  }
+
+ .product img {
+   height: 450px;
+ }
+
+ .products .front-page-box {
+   height: auto;
+ }
 }
 @media only screen and (max-width: 845px) {
+  .absolute-cart-box:hover{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+    opacity: 1;
+  }
+  .absolute-cart-box:hover .cart-contents-count {
+    margin-right: auto;
+  }
+  .absolute-cart-box {
+     box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+     border: 1px solid rgba(255, 255, 255, 0);
+    /* min-width: 220px; */
+    border-radius: 90px;
+    font-size: 12px;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0.5%;
+    right: 10%;
+    z-index: 15000;
+    opacity: 1;
+    background: none;
+    -webkit-transition: none;
+    transition: none;
+}
+  .product img {
+    height: 350px;
+  }
 
   .slide-caption {
       right: 26%;
@@ -1043,17 +1296,18 @@ textarea:focus {
   }
 }
 @media only screen and (max-width: 750px ) {
-
-
-  .slide-caption-pages {
-    right: 15%;
+  .product img {
+    height: 300px;
   }
+
+
 
   .front-page-slide-show {
     display: none;
   }
 
   .section-mobile-header-picture {
+    background-image:   -webkit-linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
     background-image:   linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.40)), url(http://localhost/mj-wp/wp-content/themes/marjaneh-goudarzi/img/slide1.jpg);
     height: 300px;
     display: inline-block;
@@ -1075,17 +1329,27 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 680px ) {
+
   .slide-caption-pages {
     left: 15%;
-    font-size: 60%;
   }
 
+}
+
+@media only screen and (max-width: 640px ) {
+
+
+  .product img {
+    height: 100%;
+  }
 
 }
+
 @media only screen and (max-width: 530px ) {
+
+
   .front-page-double-links{
     margin: 40% auto;
     width: 100%;
-
   }
 }

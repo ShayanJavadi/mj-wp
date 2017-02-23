@@ -17,4 +17,4 @@
  */
 ?>
 <div class="row">
-<div class="products">
+<div class="products large-12">

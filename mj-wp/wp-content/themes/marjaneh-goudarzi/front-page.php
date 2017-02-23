@@ -138,7 +138,7 @@
         <div class="large-12 large-centered">
           <h2 class="text-center"> Keep in touch  </h2>
         </div>
-        <div class="row white-row">
+        <div class="row">
           <div class="large-8 medium-centered columns">
             <form action="<?php the_permalink(); ?>" method="post">
               <p><label for="name">Name: <span>*</span> <br><input type="text" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>"></label></p>
