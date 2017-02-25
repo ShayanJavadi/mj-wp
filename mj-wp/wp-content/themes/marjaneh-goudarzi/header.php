@@ -17,6 +17,14 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <header>
       <nav>
         <div class="row">
@@ -38,7 +46,6 @@
     </header>
     <div class="">
       <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-
           $count = WC()->cart->cart_contents_count;
           ?><a class="cart-contents absolute-cart-box" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
           if ( $count > 0 ) {
@@ -46,7 +53,6 @@
               <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
               <?php
           }
-
           $subtotal = WC()->cart->subtotal;
           ?><?php
           if ( $subtotal > 0 ) {

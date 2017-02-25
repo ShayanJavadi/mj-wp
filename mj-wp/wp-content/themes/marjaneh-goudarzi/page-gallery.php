@@ -2,16 +2,16 @@
   <?php $featured_query = new WP_Query(array(
     'category_name' => 'gallery' )); ?>
     <div class="main front-page-main gallery-main">
-      <section class="section-slide-show">
-          <div class="slide-show large-12 large-centered  fadein">
-            <div class="slide-gallery fadein">
+      <section class="section-slide-show fadein">
+          <div class="slide-show large-12 large-centered  ">
+            <div class="slide-gallery ">
               <div class="slide-caption slide-caption-pages">
                 <h3 class="slide-caption-text ">Gallery</h3>
               </div>
             </div>
           </div>
       </section>
-      <section class="gallery">
+      <section class="gallery first-section">
 
         <?php
           $i = 1;

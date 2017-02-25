@@ -24,11 +24,10 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-
-<h2 class="text-center">Cart</h2>
 <form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
+<h2 class="text-center">Cart</h2>
 
 <table class="shop_table shop_table_responsive cart" cellspacing="0">
 	<thead>
@@ -140,19 +139,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	</tbody>
 </table>
+<div class="large-12 text-right">
+	<span class="total-title">Total</span>
+	<?php
+	woocommerce_cross_sell_display();
+	//woocommerce_cart_totals();
+	wc_cart_totals_subtotal_html();
+	woocommerce_button_proceed_to_checkout();
+	?>
+</div>
 
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 
-	<div class="large-12 text-right">
-		Total
-	<?php
-		woocommerce_cross_sell_display();
-		//woocommerce_cart_totals();
-		wc_cart_totals_subtotal_html();
-		woocommerce_button_proceed_to_checkout();
-	 	 ?>
-	 </div>
 
 </form>
 <?php do_action( 'woocommerce_after_cart' ); ?>

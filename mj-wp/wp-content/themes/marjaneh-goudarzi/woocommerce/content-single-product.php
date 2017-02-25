@@ -35,9 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
-<a href="http://localhost/mj-wp/shop/"><button type="button" name="button" class="button back-button">&larr; Back to shop</button></a>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<a href="http://localhost/mj-wp/shop/"><button type="button" name="button" class="button back-button">&larr; Back to shop</button></a>
+
 	<div class="medium-6 columns">
 
 	<?php

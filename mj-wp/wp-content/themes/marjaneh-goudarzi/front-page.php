@@ -39,7 +39,7 @@
             </div>
         </div>
       </section>
-      <section>
+      <section class="first-section">
         <div class="row front-page-classes-wrap">
           <div class="large-12 large-centered">
             <h2 class="text-center"> Art Events For Everyone! </h2>
@@ -68,13 +68,13 @@
         </div>
       </section>
       <section>
-        <?php $featured_query = new WP_Query(array(
-          'category_name' => 'gallery' )); ?>
         <div class="row">
           <div class="large-12 large-centered">
-            <h2 class="text-center"> Recent Works <h2>
+            <h2 class="text-center"> Recent Works </h2>
           </div>
         </div>
+        <?php $featured_query = new WP_Query(array(
+          'category_name' => 'gallery' )); ?>
         <?php $i = 0; ?>
         <?php while($featured_query->have_posts() && $i < 2) :
           $featured_query->the_post(); ?>
@@ -100,7 +100,7 @@
           'category_name' => 'featured' )); ?>
         <div class="row">
           <div class="large-12 large-centered">
-            <h2 class="text-center"> Recent Blog Posts <h2>
+            <h2 class="text-center"> Recent Blog Posts </h2>
           </div>
         </div>
         <?php $i = 0; ?>

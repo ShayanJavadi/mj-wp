@@ -1,8 +1,8 @@
 <?php get_header(); ?>
     <div class="main">
-      <section class="section-slide-show">
-          <div class="slide-show large-12 large-centered  fadein">
-            <div class="slide-lessons fadein">
+      <section class="section-slide-show fadein">
+          <div class="slide-show large-12 large-centered  ">
+            <div class="slide-lessons ">
               <div class="slide-caption slide-caption-pages">
                 <h3 class="slide-caption-text ">Lessons &amp; Parties</h3>
               </div>

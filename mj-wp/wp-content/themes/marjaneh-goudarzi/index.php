@@ -9,15 +9,22 @@
          return '<p>' . $str . ' [...] </p>';
          }
        ?>
+
        <?php $featured_query = new WP_Query(array(
          'category_name' => 'blog' )); ?>
         <?php $i = 0; ?>
         <section>
 
           <div class="main">
-            <div class="text-center single-title">
-              <h2> Blog </h2>
-            </div>
+            <section class="section-slide-show section-slide-show-non-front fadein">
+                <div class="slide-show large-12 large-centered  ">
+                  <div class="slide-blog ">
+                    <div class="slide-caption slide-caption-pages">
+                      <h3 class="slide-caption-text ">Blog</h3>
+                    </div>
+                  </div>
+                </div>
+            </section>
 
         <?php while($featured_query->have_posts()) :
           $featured_query->the_post(); ?>

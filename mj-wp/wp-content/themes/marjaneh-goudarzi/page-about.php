@@ -1,9 +1,15 @@
 <?php get_header(); ?>
-  <div class="main">
-    <section>
-      <div class="text-center single-title">
-        <h2>About</h2>
-      </div>
+  <div class="main section-single">
+    <section class=" ">
+      <section class="section-slide-show section-slide-show-non-front fadein">
+          <div class="slide-show large-12 large-centered">
+            <div class="slide-about ">
+              <div class="slide-caption slide-caption-pages">
+                <h3 class="slide-caption-text ">About</h3>
+              </div>
+            </div>
+          </div>
+      </section>
 
       <div class="row fadein white-row">
         <div class="large-6 columns fadein2-6">

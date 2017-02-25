@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div  <?php post_class(' medium-4 fadein columns text-center front-page-box'); ?>>
+<div  <?php post_class(' medium-4  columns text-center front-page-box'); ?>>
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.
