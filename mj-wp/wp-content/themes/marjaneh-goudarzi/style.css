@@ -898,9 +898,27 @@ textarea:focus {
 
 
 /*---------------------------------------------*/
+/*----------------SHOP-BOOKING----------------*/
+/*---------------------------------------------*/
+.wc-bookings-booking-form fieldset {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.label {
+  font-family: 'roboto';
+    display: inline-block;
+    padding: 0.33333rem 0.0rem;
+    font-size: 0.8rem;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: default;
+    border-radius: 0;
+    background: #fff;
+    color: #ff003d;
+}
+/*---------------------------------------------*/
 /*----------------SHOP----------------*/
 /*---------------------------------------------*/
-
 
 #billing_address_1_field,
 #billing_address_2_field {
@@ -1559,7 +1577,7 @@ tr:first-of-type {
     top: 1.5%;
     right: 10%;
 
-}
+  }
 }
 
 

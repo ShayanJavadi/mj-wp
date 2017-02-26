@@ -36,7 +36,11 @@ get_header( 'shop' ); ?>
 			<section>
 					<div class="white-row row single-product-row">
 						<div class="large-12 columns">
-							<?php wc_get_template_part( 'content', 'single-product' ); ?>
+							<?php if (wc_get_product( $post->ID )->is_type('booking')) {
+								wc_get_template_part( 'content', 'single-product-bookings' );
+							} else {
+								wc_get_template_part( 'content', 'single-product' );
+							}?>
 
 						</div>
 					</div>

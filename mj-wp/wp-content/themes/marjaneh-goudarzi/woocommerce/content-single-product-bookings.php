@@ -37,9 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<a href="http://localhost/mj-wp/shop/"><button type="button" name="button" class="button back-button">&larr; Back to shop</button></a>
-
-	<div class="medium-6 columns">
+  <div class="large-3 columns">
 
 	<?php
 		/**
@@ -48,11 +46,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_show_product_sale_flash - 10
 		 * @hooked woocommerce_show_product_images - 20
 		 */
+
+		add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 10 );
+
+		add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 10 );
 		do_action( 'woocommerce_before_single_product_summary' );
-		
+
 	?>
-	</div>
-	<div class="summary entry-summary medium-6 columns">
+
+    </div>
+	<div class="summary entry-summary">
 
 		<?php
 			/**
@@ -66,13 +69,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
 			 */
-			 woocommerce_template_single_title();
-			 woocommerce_template_single_price();
-			 echo ("<p class='single-content-description'>" . $post->post_content . "</p>");
-			echo "<span class='single-product-add-button'>";
-			woocommerce_template_loop_add_to_cart();
-			echo "</span>";
-			//do_action( 'woocommerce_single_product_summary' );
+			 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+			 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+			//  remove_action( 'wp_footer', 'woocommerce_template_single_title' );
+			do_action( 'woocommerce_single_product_summary' );
 		?>
 
 	</div><!-- .summary -->
