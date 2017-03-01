@@ -28,17 +28,23 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <h2 class="text-center">Cart</h2>
+<div class="large-12 text-right">
+	<span class="total-title">Total</span>
+	<?php
+	woocommerce_cross_sell_display();
+	//woocommerce_cart_totals();
+	wc_cart_totals_subtotal_html();
+	woocommerce_button_proceed_to_checkout();
+	?>
+</div>
 
-<table class="shop_table shop_table_responsive cart" cellspacing="0">
+<table class="shop_table shop_table_responsive cart" cellspacing="0" cellpadding="0" border="0">
 	<thead>
 		<tr>
-			<th class="product-thumbnail"><p><?php _e( 'Item', 'woocommerce' ); ?></p></th>
-			<th class="product-name">&nbsp;</th>
-			<th class="product-price"><p><?php _e( 'Price', 'woocommerce' ); ?></p></th>
-			<th class="product-quantity"><p><?php _e( 'Quantity', 'woocommerce' ); ?></p></th>
-			<th class="product-subtotal"><p><?php _e( 'Total', 'woocommerce' ); ?></p></th>
-			<th  class="product-remove">&nbsp;</th>
-
+			<th></th>
+			<th>Product</th>
+			<th class="text-right">Price</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -73,6 +79,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<td class="product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
+
 							if ( ! $product_permalink ) {
 								echo '<p>' . apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '</p>&nbsp;';
 							} else {
@@ -80,41 +87,44 @@ do_action( 'woocommerce_before_cart' ); ?>
 							}
 
 							// Meta data
-							echo WC()->cart->get_item_data( $cart_item );
 
+							// var_dump($_SESSION);
+							// var_dump(WC()->cart->cart_contents) ;
+							custom_cart_booking($cart_item);
 							// Backorder notification
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
 							}
 						?>
 					</td>
-
-					<td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
+<!--
+					<td class="product-price" data-title="<?php// _e( 'Price', 'woocommerce' ); ?>">
 						<?php
-							echo '<p>' . apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) . '</p>';
+							//echo '<p>' . apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) . '</p>';
 						?>
-					</td>
+					</td> -->
 
-					<td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
-						<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '<p>1</p> <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-							} else {
-								$product_quantity = woocommerce_quantity_input( array(
-									'input_name'  => "cart[{$cart_item_key}][qty]",
-									'input_value' => $cart_item['quantity'],
-									'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-									'min_value'   => '0'
-								), $_product, false );
-							}
 
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
-						?>
-					</td>
 
 					<td class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
 						<?php
-							echo'<p>' . apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) . '</p>';
+						// var_dump($field);
+						// 	if ( $_product->is_sold_individually() ) {
+						// 		$product_quantity = sprintf( '<p>1</p> <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+						// 	}
+						// 	else {
+						// 		$product_quantity = woocommerce_quantity_input( array(
+						// 			'input_name'  => "cart[{$cart_item_key}][qty]",
+						// 			'input_value' => $cart_item['quantity'],
+						// 			'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+						// 			'min_value'   => '0'
+						// 		), $_product, false );
+						// 	}
+
+							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+						?>
+						<?php
+							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ;
 						?>
 					</td>
 					<td class="product-remove">
@@ -137,17 +147,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 		?>
 
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+		<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+
+		<?php do_action( 'woocommerce_cart_actions' ); ?>
+
+		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 	</tbody>
 </table>
-<div class="large-12 text-right">
-	<span class="total-title">Total</span>
-	<?php
-	woocommerce_cross_sell_display();
-	//woocommerce_cart_totals();
-	wc_cart_totals_subtotal_html();
-	woocommerce_button_proceed_to_checkout();
-	?>
-</div>
 
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>

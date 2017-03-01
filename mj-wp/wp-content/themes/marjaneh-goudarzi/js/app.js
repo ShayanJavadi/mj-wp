@@ -1,6 +1,14 @@
 $(document).foundation();
 $(document).ready(function() {
 
+  //change the color of navbar if the page doenst have a jumbo picture at the top
+  //so that the text is visible
+  var hasSectionSlide = $('.section-slide-show');
+  if (hasSectionSlide.length === 0) {
+    $('header').addClass('nav-no-slide-show');
+    console.log('works');
+  }
+
 
   $('.slide-show').slick({
     autoplay: true,
@@ -26,7 +34,7 @@ $(document).ready(function() {
 
 
   //sticky nav
-  $('header').waypoint(function(direction) {
+  $('body').waypoint(function(direction) {
       if (direction == "down") {
           $('nav').addClass('sticky');
           $('nav').addClass('fadein-fast');

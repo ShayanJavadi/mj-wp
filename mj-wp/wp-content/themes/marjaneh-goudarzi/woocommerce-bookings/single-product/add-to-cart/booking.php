@@ -15,14 +15,13 @@ if ( ! $product->is_purchasable() ) {
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 <noscript><?php _e( 'Your browser must support JavaScript in order to make a booking.', 'woocommerce-bookings' ); ?></noscript>
-<div class="large-9 large-left columns">
+<div class="large-6 large-left columns">
 	<form class="cart" method="post" enctype='multipart/form-data'>
 
 		<div id="wc-bookings-booking-form" class="wc-bookings-booking-form" style="display:none">
 
 			<?php do_action( 'woocommerce_before_booking_form' ); ?>
 			<?php $booking_form->output(); ?>
-
 
 			<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 

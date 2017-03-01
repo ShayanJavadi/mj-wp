@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * @hooked wc_print_notices - 10
 	 */
 	 do_action( 'woocommerce_before_single_product' );
-
 	 if ( post_password_required() ) {
 	 	echo get_the_password_form();
 	 	return;
@@ -37,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <div class="large-3 columns">
+  <div class="large-6 columns">
 
 	<?php
 		/**
@@ -46,12 +45,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_show_product_sale_flash - 10
 		 * @hooked woocommerce_show_product_images - 20
 		 */
-
+		//  var_dump(get_defined_vars());
 		add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 10 );
 
-		add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 10 );
-		do_action( 'woocommerce_before_single_product_summary' );
+		// add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 10 );
+		remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 
+		do_action( 'woocommerce_before_single_product_summary' );
+		echo ("<p class='single-content-description'>" . $post->post_content . "</p>");
+		// woocommerce_show_product_images();
 	?>
 
     </div>
@@ -72,10 +74,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 			 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
+
 			//  remove_action( 'wp_footer', 'woocommerce_template_single_title' );
 			do_action( 'woocommerce_single_product_summary' );
 		?>
 
+		<?php do_action( 'woocommerce_after_single_product' ); ?>
 	</div><!-- .summary -->
 
 	<?php
@@ -92,5 +96,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
-
-<?php do_action( 'woocommerce_after_single_product' ); ?>

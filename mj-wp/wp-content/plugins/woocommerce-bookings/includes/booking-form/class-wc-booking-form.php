@@ -561,7 +561,7 @@ class WC_Booking_Form {
 			$persons = array_sum( $data['_persons'] );
 
 			if ( empty( $persons ) ) {
-				return new WP_Error( 'Error', __( 'Persons are required - please enter the number of persons above', 'woocommerce-bookings' ) );
+				return new WP_Error( 'Error', __( 'Please enter the number of people above', 'woocommerce-bookings' ) );
 			}
 			if ( $this->product->get_max_persons() && $persons > $this->product->get_max_persons() ) {
 				return new WP_Error( 'Error', sprintf( __( 'The maximum persons per group is %d', 'woocommerce-bookings' ), $this->product->wc_booking_max_persons_group ) );

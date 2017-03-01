@@ -24,6 +24,14 @@
   add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
   //add customizer functionality
 
+  //controls the way bookings appear in cart
+  function custom_cart_booking ($cart_item) {
+    // if ($cart_item['booking'] === null) {
+    //   return;
+    // }
+    //var_dump ($cart_item);
+  }
+
 
 
   /**

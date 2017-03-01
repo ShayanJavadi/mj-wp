@@ -1,5 +1,4 @@
 <div id="bookings_resources" class="woocommerce_options_panel panel wc-metaboxes-wrapper">
-
 	<div class="options_group" id="resource_options">
 
 		<?php woocommerce_wp_text_input( array( 'id' => '_wc_booking_resouce_label', 'placeholder' => __( 'Type', 'woocommerce-bookings' ), 'label' => __( 'Label', 'woocommerce-bookings' ), 'desc_tip' => true, 'description' => __( 'The label shown on the frontend if the resource is customer defined.', 'woocommerce-bookings' ) ) ); ?>
@@ -40,9 +39,9 @@
 					$resource            = get_post( $resource_id );
 					$resource_base_cost  = isset( $resource_base_costs[ $resource_id ] ) ? $resource_base_costs[ $resource_id ] : '';
 					$resource_block_cost = isset( $resource_block_costs[ $resource_id ] ) ? $resource_block_costs[ $resource_id ] : '';
-					
+
 					include( 'html-booking-resource.php' );
-					
+
 					$loop++;
 				}
 			}

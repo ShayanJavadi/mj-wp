@@ -1,5 +1,6 @@
 <?php
 wp_enqueue_script( 'wc-bookings-month-picker' );
+echo "sexxxx";
 extract( $field );
 ?>
 <div class="form-field form-field-wide">

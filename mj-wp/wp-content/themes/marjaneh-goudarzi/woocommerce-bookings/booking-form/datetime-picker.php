@@ -8,7 +8,13 @@ $month_before_day = strpos( __( 'F j, Y' ), 'F' ) < strpos( __( 'F j, Y' ), 'j' 
 ?>
 <fieldset class="wc-bookings-date-picker large-8 large-centered <?php echo implode( ' ', $class ); ?>">
 	<legend>
-		<span class="label"><?php echo $label; ?></span>: <small class="wc-bookings-date-picker-choose-date"><?php _e( 'Choose...', 'woocommerce-bookings' ); ?></small>
+
+		<span class="date"><?php
+		if ($label == 'Date') {
+			echo "Date";
+		} else {
+			echo $label;
+		}?></span>: <small class="wc-bookings-date-picker-choose-date"><?php _e( 'Choose...', 'woocommerce-bookings' ); ?></small>
 	</legend>
 	<div class="picker" data-display="<?php echo $display; ?>" data-availability="<?php echo esc_attr( json_encode( $availability_rules ) ); ?>" data-default-availability="<?php echo $default_availability ? 'true' : 'false'; ?>" data-fully-booked-days="<?php echo esc_attr( json_encode( $fully_booked_days ) ); ?>" data-partially-booked-days="<?php echo esc_attr( json_encode( $partially_booked_days ) ); ?>" data-min_date="<?php echo ! empty( $min_date_js ) ? $min_date_js : 0; ?>" data-max_date="<?php echo $max_date_js; ?>" data-default_date="<?php echo esc_attr( $default_date ); ?>"></div>
 	<div class="wc-bookings-date-picker-date-fields">
@@ -38,7 +44,7 @@ $month_before_day = strpos( __( 'F j, Y' ), 'F' ) < strpos( __( 'F j, Y' ), 'j' 
 	</div>
 </fieldset>
 <div class="form-field form-field-wide">
-	<label for="<?php echo $name; ?>"><?php _e( 'Time', 'woocommerce-bookings' ); ?>:</label>
+	<label for="<?php echo $name; ?>" class="<?php if($name == 'wc_bookings_field_start_date') echo 'time' ?>"><?php _e( 'Time', 'woocommerce-bookings' ); ?>:</label>
 	<ul class="block-picker">
 		<li><?php _e( 'Choose a date above to see available times.', 'woocommerce-bookings' ); ?></li>
 	</ul>

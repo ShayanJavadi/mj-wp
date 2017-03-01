@@ -6,7 +6,7 @@
 
 /*color #ff003d*/
 /*color #1abc9c*/
-/*color #d02424*/
+/*color dark #b8052f*/
 
 
 *:focus {
@@ -24,17 +24,35 @@ body{
 	overflow: auto;
 	/*max-width: 1140px;*/
 	background: #fff;
-
+  font-family: 'roboto';
 }
 
 .hide {
   display: none !important;
 }
 
-nav {
-  background-color: rgba(255, 255, 255, 0.98);
-  z-index: 99999;
 
+.nav-no-slide-show {
+  position: static
+}
+.nav-no-slide-show h1,
+.nav-no-slide-show .nav-top li a
+ {
+  color: #262525;
+}
+
+nav {
+  /*background-color: rgba(255, 255, 255, 0.98);*/
+  z-index: 99999;
+}
+
+nav h1 {
+  color: #fff;
+}
+
+.nav-top li a{
+  color: #fff;
+  font-weight: 400;
 }
 a:active,
 a:hover,
@@ -51,7 +69,8 @@ p {
 	letter-spacing: .5px;
 	margin-bottom: 20px;
   font-size: 120%;
-  font-weight: 300;
+  font-weight: 400;
+  color: #504e4e;
 }
 
 .paragraph-title {
@@ -103,9 +122,15 @@ section:last-of-type {
 
 .sticky h1 {
   padding-top: 0;
+  color: #262525;
+}
+.sticky .nav-top li a  {
+  color: #262525;
+
 }
 .sticky .nav-top {
-  padding-top: 25px;
+  color: #1b1b1b;
+  padding-top: 30px;
 }
 .sticky {
     position: fixed;
@@ -119,7 +144,7 @@ section:last-of-type {
 
 
 .menu-main-menu-container a {
-  border-bottom: 1px solid #fff;
+  /*border-bottom: 1px solid #fff;*/
   color:#322f2f;
   -webkit-transition:color 0.3s, background 0.2s;
   -webkit-transition: color 0.3s, border-bottom 0.3s;
@@ -206,7 +231,12 @@ width: 100%;
 /*-----------NAVIGATION------------*/
 
 header {
-  box-shadow: inset 0px -0.5px 2px rgba(0, 0, 0, 0.16);
+  /*box-shadow: inset 0px -0.5px 2px rgba(0, 0, 0, 0.16);*/
+  z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 header .row {
   padding-top: 0;
@@ -221,7 +251,7 @@ header h1 {
 
 .nav-top {
   width: 100%;
-  padding-top: 25px;
+  padding-top: 30px;
   margin: 0;
 }
 
@@ -260,18 +290,17 @@ h1 {
   letter-spacing: 1px;
 	-webkit-transition:color 0.2s;
 	transition: color 0.2s;
-  font-size: 400%;
+  font-size: 450%;
 
 }
 
 h2 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  padding-bottom: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.11);
 
 	color: #2e2e2e;
 	font-family: 'Roboto', serif;
 	font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 	-webkit-transition:color 0.2s;
 	transition: color 0.2s;
 }
@@ -837,9 +866,7 @@ h1:hover {
   border-radius: 3px;
 }
 
-form span{
-  color: red;
-}
+
 
 /*inputs*/
 .inline-block {
@@ -900,6 +927,74 @@ textarea:focus {
 /*---------------------------------------------*/
 /*----------------SHOP-BOOKING----------------*/
 /*---------------------------------------------*/
+.class-booking-cost,
+.date,
+.form-field {
+    font-size: 125%;
+    font-weight: 400;
+}
+.form-field li a {
+  font-size: 85%;
+  font-weight: 400;
+}
+
+.time {
+  font-size: 105%;
+  font-weight: 400;
+}
+.wc-bookings-booking-form .form-field input[type=number] {
+     width: 15%;
+}
+.wc_bookings_field_persons input{
+  display: inline-block;
+}
+.wc_bookings_field_persons p {
+  margin: 0;
+}
+.wc-bookings-date-picker .ui-datepicker-header {
+    padding: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+     background-color: #494848;
+    background-image: none;
+    border:none;
+    color: #fff;
+}
+
+.ui-datepicker table {
+   border-collapse: separate;
+}
+.wc-bookings-date-picker .ui-datepicker th {
+    color: #494848;
+}
+.wc-bookings-date-picker .ui-datepicker .ui-datepicker-next, .wc-bookings-date-picker .ui-datepicker .ui-datepicker-prev {
+    background: #494848;
+}
+.wc-bookings-date-picker .ui-datepicker .ui-datepicker-next.ui-state-hover, .wc-bookings-date-picker .ui-datepicker .ui-datepicker-prev.ui-state-hover {
+    background: #ff003d;
+}
+.ui-widget-header {
+    background: #fff;
+}
+
+.wc-bookings-date-picker .ui-datepicker td.bookable a {
+    background-color: #ff003d!important;
+}
+.wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
+    background-color: #b8052f!important;
+}
+.wc-bookings-booking-form .block-picker li a.selected {
+    background: #b8052f!important;
+    color: #fff!important;
+}
+.wc-bookings-booking-form .block-picker li:nth-child(odd) a:focus, .wc-bookings-booking-form .block-picker li:nth-child(odd) a:hover,
+.wc-bookings-booking-form .block-picker li:nth-child(even) a:focus, .wc-bookings-booking-form .block-picker li:nth-child(even) a:hover {
+    background: #ff003d;
+    color: #fff;
+}
 .wc-bookings-booking-form fieldset {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -919,6 +1014,21 @@ textarea:focus {
 /*---------------------------------------------*/
 /*----------------SHOP----------------*/
 /*---------------------------------------------*/
+.block-picker li {
+  width: 100%;
+}
+
+.block-picker .block {
+  width: 30%;
+}
+.ui-widget {
+    font-family: 'roboto';
+}
+.cart-rows img {
+  height: 100px;
+  width: auto;
+  max-width: 70px;
+}
 
 #billing_address_1_field,
 #billing_address_2_field {
@@ -936,7 +1046,7 @@ textarea:focus {
 .woocommerce-message
  {
     padding: 1em 2em 1em 3.5em!important;
-    margin: 0 0 2em!important;
+    margin: 0 0 m!important;
     font-family: 'Roboto', sans-serif;
     font-size: 130%;
     position: relative;
@@ -1023,7 +1133,7 @@ span.click-here:hover {
     background-color: #ff003d;
     font-weight: bold;
     border-radius: 50%;
-    padding: 1px 6px;
+    padding: 1px 5px;
     line-height: 1;
     font-family: 'Roboto', sans-serif;
     vertical-align: top;
@@ -1104,8 +1214,8 @@ table p {
   font-weight: 300;
 }
 
+margin-left: 35px;
 button.single_add_to_cart_button.button.alt {
-    margin-left: 35px;
 }
 
 .products img {
@@ -1154,8 +1264,9 @@ button.single_add_to_cart_button.button.alt {
   color: #777;
   display: block;
   padding-bottom: 10px;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 130%;
+  font-family: 'roboto';
 }
 
 .single-product-add-button a{
@@ -1214,6 +1325,10 @@ table {
   table-layout: fixed;
   border-collapse: separate;
   overflow: hidden;
+  border-style:none;
+}
+td, th {
+   border:none;
 }
 
 
@@ -1223,8 +1338,6 @@ td {
 }
 
 .cart-times {
-    color: #fff;
-    background-color: #ff0032;
     border-radius: 50%;
     font-size: 130%;
     text-align: center;
@@ -1234,9 +1347,6 @@ td {
     transition: background-color 0.2s;
 }
 
-.cart-times:hover {
-  background-color: #da0437
-}
 
 
 tr:first-of-type {
@@ -1283,6 +1393,13 @@ tr:first-of-type {
     font-size: 200%;
 }
 @media only screen and (max-width: 1220px) {
+  .nav-top li {
+    font-size: 137%;
+  }
+
+  header h1 {
+    font-size: 390%;
+  }
 
   .gallery-small-img {
     width:50%;
@@ -1356,13 +1473,19 @@ tr:first-of-type {
   }
 
   h1{
-    padding-left: 30px;
-    font-size: 350%;
-    display: inline-block;
+  }
+
+  .nav-top li a {
+    color: #262525;
   }
 
   header h1 {
     padding-top: 0px;
+    color: #262525;
+    padding-left: 30px;
+    font-size: 350%;
+    display: inline-block;
+
   }
 
   header {
@@ -1499,7 +1622,6 @@ tr:first-of-type {
   }
   .product-quantity {
     width: 50px;
-    font-size: 90%;
   }
 
   td.product-quantity p{
@@ -1545,7 +1667,7 @@ tr:first-of-type {
   .cart-contents {
     padding-top: 15px;
   }
-  h1 {
+  header h1 {
     padding-left: 1%;
     margin-top: 5px;
     font-size: 300%;
@@ -1560,7 +1682,7 @@ tr:first-of-type {
   td p {
     font-size: 80%;
   }
-    h1 {
+  header  h1 {
       padding-left: 0.5%;
       margin-top: 8px;
       font-size: 250%;
@@ -1586,7 +1708,7 @@ tr:first-of-type {
     font-size: 70%;
     font-weight: 400;
   }
-    h1 {
+  header  h1 {
       padding-left: 0.5%;
       margin-top: 10px;
       font-size: 230%;

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick-theme.css">
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <?php wp_head(); ?>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
   </head>
   <body>
     <div id="fb-root"></div>
@@ -64,3 +64,4 @@
 
       <?php } ?>
     </div>
+    
