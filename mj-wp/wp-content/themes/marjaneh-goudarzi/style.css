@@ -20,11 +20,14 @@ body{
 	color:#404040;
 	/*margin: 40px auto;*/
 	height: auto;
-	border:#f0f0f0 solid 1px;
 	overflow: auto;
 	/*max-width: 1140px;*/
 	background: #fff;
   font-family: 'roboto';
+}
+
+.bold {
+  font-weight: 400;
 }
 
 .hide {
@@ -84,7 +87,7 @@ p {
 
 section {
   margin-top: 30px;
-  background-color: #f4f4f4;
+  background-color:#F9FAFA;
 }
 
 section:first-of-type {
@@ -309,7 +312,7 @@ h3 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	color: #2e2e2e;
 	font-family: 'Cormorant Garamond', serif;
-	font-weight: 400;
+	font-weight: bold;
   letter-spacing: 3px;
 	-webkit-transition:color 0.2s;
 	transition: color 0.2s;
@@ -493,7 +496,7 @@ h1:hover {
 	border-top: rgba(206, 206, 206, 0.73) 0.1px solid;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19);
 
-	background-color: #f4f4f4;
+	background-color: #F9FAFA;
 }
 
 .main-footer:before {
@@ -927,6 +930,18 @@ textarea:focus {
 /*---------------------------------------------*/
 /*----------------SHOP-BOOKING----------------*/
 /*---------------------------------------------*/
+.product-title {
+  font-size: 130%;
+  color: #777575;
+}
+table {
+  font-family: 'roboto';
+  font-weight: 400;
+}
+td ,
+td div{
+  color: #777575;
+}
 .class-booking-cost,
 .date,
 .form-field {
@@ -1261,10 +1276,10 @@ button.single_add_to_cart_button.button.alt {
 }
 
 .woocommerce-Price-amount {
-  color: #777;
+  color: ##5a5a5a;
   display: block;
   padding-bottom: 10px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 130%;
   font-family: 'roboto';
 }

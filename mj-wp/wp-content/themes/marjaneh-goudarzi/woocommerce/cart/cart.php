@@ -24,19 +24,11 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
+<h2 class="text-center">Your Cart</h2>
 <form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
-<h2 class="text-center">Cart</h2>
-<div class="large-12 text-right">
-	<span class="total-title">Total</span>
-	<?php
-	woocommerce_cross_sell_display();
-	//woocommerce_cart_totals();
-	wc_cart_totals_subtotal_html();
-	woocommerce_button_proceed_to_checkout();
-	?>
-</div>
+
 
 <table class="shop_table shop_table_responsive cart" cellspacing="0" cellpadding="0" border="0">
 	<thead>
@@ -83,7 +75,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							if ( ! $product_permalink ) {
 								echo '<p>' . apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '</p>&nbsp;';
 							} else {
-								echo  apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s"><div class="cart-rows">%s</div></a>', esc_url( $product_permalink ) , '<p>' . $_product->get_title() ), $cart_item, $cart_item_key ) . '</p>';
+								echo  apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s"><div class="cart-rows">%s</div></a>', esc_url( $product_permalink ) , '<strong class="product-title">' . $_product->get_title() ), $cart_item, $cart_item_key ) . '</strong><br>';
 							}
 
 							// Meta data
@@ -124,7 +116,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
 						?>
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ;
+							echo  apply_filters( 'woocommerce_cart_item_subtotal', '<b>' . WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ) . '</b>', $cart_item, $cart_item_key ) ;
 						?>
 					</td>
 					<td class="product-remove">
@@ -147,14 +139,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 		?>
 
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-		<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 		<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 	</tbody>
-</table>
 
+</table>
+<div class="large-12 text-right">
+	<span class="total-title">Total</span>
+	<?php
+	woocommerce_cross_sell_display();
+	//woocommerce_cart_totals();
+	wc_cart_totals_subtotal_html();
+	woocommerce_button_proceed_to_checkout();
+	?>
+</div>
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 

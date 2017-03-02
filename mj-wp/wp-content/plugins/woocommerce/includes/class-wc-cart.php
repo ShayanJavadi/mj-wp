@@ -2176,7 +2176,7 @@ class WC_Cart {
 		/**
 		 * Gets the cart tax (after calculation).
 		 *
-		 * @return string formatted price
+		 * @return string formatted fcprice
 		 */
 		public function get_cart_tax() {
 			$cart_total_tax = wc_round_tax_total( $this->tax_total + $this->shipping_tax_total );

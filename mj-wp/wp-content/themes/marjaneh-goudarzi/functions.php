@@ -26,12 +26,28 @@
 
   //controls the way bookings appear in cart
   function custom_cart_booking ($cart_item) {
-    // if ($cart_item['booking'] === null) {
-    //   return;
-    // }
-    //var_dump ($cart_item);
+    if ($cart_item['booking'] === null) {
+      return;
+    }
+    echo "<strong>Booking Date: </strong>";
+    echo '<span>' . $cart_item['booking']['date'] . '</span><br>';
+    echo "<strong>Booking Time: </strong>";
+    echo '<span>' . $cart_item['booking']['time'] . '</span><br>';
+    echo "<strong>People Attending: </strong>";
+    echo '<span>' . $cart_item['booking']['Persons'] . '</span>';
+    // march whatever
+    //booking time:
+    // 11 whatever
+    // People attending :
+    // 3
   }
 
+  function redirect_to_checkout() {
+      global $woocommerce;
+      $checkout_url = $woocommerce->cart->get_checkout_url();
+      return $checkout_url;
+  }
+  add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
 
 
   /**
